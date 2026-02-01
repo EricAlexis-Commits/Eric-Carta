@@ -1,0 +1,289 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@0;1&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    background-color: #FAD7DF;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+}
+.paper{
+    position: absolute;
+    line-height: 2rem;
+    z-index: -1;
+    background: white;
+    width: 400px;
+    height: 200px;
+    transition: all .75s;
+     font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+ 
+     font-style: normal;
+    
+
+}
+.container-letter{
+    position: relative;
+}
+.cover{
+    position: absolute;
+    border-right: 200px solid transparent;
+    border-left: 200px solid transparent;
+    border-top: 100px solid #fe3334;
+    border-bottom: 100px solid transparent;
+
+    /*transform: rotateX(180deg);*/
+    transition: transform .75s;
+    transform-origin: top;
+}
+.letter{
+
+    border-right: 200px solid #ff989e;
+    border-left: 200px solid #ff889e;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #ff858e;
+}
+.options{
+    display: flex;
+    gap: 5rem;
+     & button{
+        color:#fe3334;
+        font-weight: 600;
+        border-radius: 3px;
+        padding: 0.5rem 1rem;
+        background: #fad7df;
+        border: 1px solid #fe3334;
+        cursor: pointer;
+
+    }
+    & button:hover{
+
+        background: #ff989e;
+        color: white;
+    }
+}
+.open-cover{
+    transform: rotateX(180deg);
+    
+}
+.open-paper{
+    /*top: -100px;*/
+    animation: openPaper 1s forwards;
+}
+
+@keyframes openPaper{
+    0%{
+        top: 0;
+    }
+    100%{
+        top:-120px;
+    }
+}
+
+.close-paper{
+    animation: closePaper 1s forwards;
+}
+
+@keyframes closePaper{
+
+    0%{
+        top: -120px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+.heart{
+    display: none;
+    position: absolute;
+    top:34%;
+    left:45.5%;
+    font-size: 3rem;
+    margin: auto;
+    animation: upsize 1s forwards;
+    color:#fe3334;
+    
+}
+
+@keyframes upsize{
+    0%{
+        scale: 1;
+        opacity: 1;
+    }
+    100%{
+        scale:2;
+        opacity: 0;
+    }
+}
+/*Tablets y moviles grandes*/
+@media (min-width: 481px)and (max-width: 768px){
+        .options{
+            gap: 5rem;
+           
+        }
+        .heart{
+                top:25%;
+                left: 44%;
+                font-size:5rem;
+        }
+        #open{
+            padding: 1.5rem 2rem
+        }
+        #close{
+            padding: 1.5rem 2rem
+        }
+        
+}
+/*Moviles Estandar*/
+@media (min-width: 375px)and (max-width: 480px){
+            .letter{
+                border-right: 160px solid #ff989e;
+                border-left: 160px solid #ff889e;
+                border-top: 110px solid transparent;
+                border-bottom: 110px solid #ff858e;
+            }
+            .cover{
+                border-right: 160px solid transparent;
+                border-left: 160px solid transparent;
+                border-top: 110px solid #fe3334;
+                border-bottom: 110px solid transparent;
+            }
+            .paper{
+                width: 20rem;
+                height: 12.5rem;
+                
+            }
+         @keyframes openPaper{
+            0%{
+                top: 0;
+            }
+            100%{
+                top:-165px;
+            }
+        }
+        @keyframes closePaper{
+
+            0%{
+                top: -165px;
+            }
+            100%{
+            top: 0;
+            }
+        }
+}
+/*Moviles pequeños*/
+@media (min-width: 320px)and (max-width: 375px){
+    .paper{
+                width: 275px;
+                height: 200px;
+                
+        }
+        .heart{
+            font-size: 3rem;
+        }
+        .letter{
+                border-right: 140px solid #ff989e;
+                border-left: 140px solid #ff889e;
+                border-top: 100px solid transparent;
+                border-bottom: 100px solid #ff858e;
+        }
+        .cover{
+                
+                border-right: 140px solid transparent;
+                border-left: 140px solid transparent;
+                border-top: 100px solid #fe3334;
+                border-bottom: 100px solid transparent;
+        }
+        @keyframes openPaper{
+            0%{
+                top: 0;
+            }
+            100%{
+                top:-185px;
+            }
+        }
+        @keyframes closePaper{
+
+            0%{
+                top: -185px;
+            }
+            100%{
+            top: 0;
+            }
+        }
+}
+/*Laptops/Tablets pro*/
+@media (min-width: 769px)and (max-width: 1024px){
+/*Monitores Estandar*/
+        .letter{
+                border-right: 220px solid #ff989e;
+                border-left: 220px solid #ff889e;
+                border-top: 110px solid transparent;
+                border-bottom: 110px solid #ff858e
+        }
+        .cover{
+                border-right: 220px solid transparent;
+                border-left: 220px solid transparent;
+                border-top: 110px solid #fe3334;
+                border-bottom: 110px solid transparent;
+        }
+        .paper{
+                width: 27.5rem;
+                height: 12rem;
+        }
+        .heart{
+                top:28%;
+                left: 44.5%;
+                font-size:5rem;
+        }
+        #open{
+                padding: 1.5rem 2rem
+        }
+        #close{
+                padding: 1.5rem 2rem
+        }
+}
+@media (min-width: 1025px)and (max-width: 1440px){
+        .letter{
+                border-right: 270px solid #ff989e;
+                border-left: 270px solid #ff889e;
+                border-top: 135px solid transparent;
+                border-bottom: 135px solid #ff858e
+        }
+        .cover{
+                border-right: 270px solid transparent;
+                border-left: 270px solid transparent;
+                border-top: 135px solid #fe3334;
+                border-bottom: 135px solid transparent;
+        }
+        .paper{
+                width: 33.5rem;
+                height: 12rem;
+        }
+        .heart{
+                top:31%;
+                left: 45.5%;
+                font-size:5rem;
+        }
+        #open{
+                padding: 2rem 3rem;
+                font-size: 2em;
+        }
+        #close{
+                padding: 2rem 3rem;
+                font-size: 2em;
+        }
+}
